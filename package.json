@@ -2,7 +2,7 @@
   "name": "node-red-node-play",
   "version": "0.0.1",
   "description": "Output node for node-red to play sounds.",
-  "main": "index.js",
+  "main": "play.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
     "sound",
     "console"
   ],
-  "author": "André Lademann <vergissberlin@googlemail.com>",
+  "author": "André Lademann <andre@programmerq.eu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vergissberlin/node-red-node-play/issues"

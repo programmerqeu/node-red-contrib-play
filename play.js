@@ -5,9 +5,9 @@
  *
  * @project    node-red-node-play
  * @package    ChromeExtension
- * @author     André Lademann <vergissberlin@googlemail.com>
- * @copyright  Copyright (c) 2014 andrelademann.de (http://www.andrelademann.de)
- * @license    http://andrelademann.de/license
+ * @author     André Lademann <andre@programmerq.eu>
+ * @copyright  Copyright (c) 2014 programmerq.eu (http://www.programmerq.eu)
+ * @license    http://programmerq.eu/license
  * @since      2014-11-27 - 08:53:21 AM
  */
 module.exports = function(RED) {
