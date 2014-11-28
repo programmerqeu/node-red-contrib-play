@@ -11,13 +11,24 @@
  * @since      2014-11-27 - 08:53:21 AM
  */
 module.exports = function(RED) {
+	'use strict';
+
+	/**
+	 * Player options
+	 *
+	 * ['mplayer', 'afplay', 'mpg123', 'mpg321', 'play'])
+	 * @type {*}
+	 */
+
 	function PlayNode(config) {
 		RED.nodes.createNode(this,config);
 		var node = this;
+		var options, player = require('play-sound')(options = {player: this.type});
+
 		this.on('input', function(msg) {
-			msg.payload = msg.payload.toLowerCase();
+			player.play(msg.payload|| this.file);
 			node.send(msg);
 		});
 	}
-	RED.nodes.registerType("play",LowerCaseNode);
+	RED.nodes.registerType("play",PlayNode);
 }
