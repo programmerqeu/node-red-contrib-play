@@ -14,23 +14,23 @@
 module.exports = function(RED) {
 	'use strict';
 
+  var player = require('play-sound')(options = {player: this.type});
+
 	/**
 	 * Player options
 	 *
 	 * ['mplayer', 'afplay', 'mpg123', 'mpg321', 'play'])
 	 * @type {*}
 	 */
-
 	function PlayNode(config) {
-		RED.nodes.createNode(this,config);
-		var node = this,
-			  options,
-		    player = require('play-sound')(options = {player: this.type});
+		RED.nodes.createNode(this, config);
+		var node = this;
 
 		this.on('input', function(msg) {
-			player.play(msg.payload|| this.file);
+			player.play(msg.payload || this.name);
 			node.send(msg);
 		});
 	}
+
 	RED.nodes.registerType('play', PlayNode);
 }

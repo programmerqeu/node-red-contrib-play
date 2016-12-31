@@ -1,27 +1,28 @@
 <script type="text/javascript">
 	RED.nodes.registerType('play', {
-		category: 'function',
-		color: '#0587C2',
+		category: 'output',
+		color: '#FF0000',
 		defaults: {
 			name: {value: ''}
 		},
 		inputs: 1,
-		outputs: 1,
-		icon: 'icon.png',
+		outputs: 0,
+		align: 'right',
+		icon: 'bridge-dash.png',
 		label: function () {
-			return this.file || 'play';
+			return this.name || 'play';
 		}
 	});
 </script>
 
 <script type="text/x-red" data-template-name="play">
     <div class="form-row">
-        <label for="node-input-file"><i class="icon-tag"></i> File</label>
-        <input type="text" id="node-input-file" placeholder="File path">
+        <label for="node-play-input-file"><i class="icon-tag"></i> File</label>
+        <input type="text" id="node-play-input-file" placeholder="File path">
     </div>
     <div class="form-row">
-        <label for="node-input-type"><i class="icon-tag"></i> Player</label>
-				<select name="type" id="type">
+        <label for="node-play-input-type"><i class="icon-tag"></i> Player</label>
+				<select name="type" id="node-play-input-type">
 					<option value="mplayer">mplayer</option>
 					<option value="afplay">afplay</option>
 					<option value="mpg123">mpg123</option>
@@ -29,6 +30,7 @@
 				</select>
     </div>
 </script>
+
 <script type="text/x-red" data-help-name="play">
     <p>A simple node that play sounds</p>
 </script>
