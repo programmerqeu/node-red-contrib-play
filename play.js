@@ -1,5 +1,5 @@
 /**
- * Node
+ * Play sound node for NodeRED
  *
  * LICENSE:    MIT
  *
@@ -14,23 +14,29 @@
 module.exports = function(RED) {
 	'use strict';
 
-  var player = require('play-sound')(options = {player: this.type});
+	var player = require('play-sound')(opts = {});
 
 	/**
 	 * Player options
 	 *
-	 * ['mplayer', 'afplay', 'mpg123', 'mpg321', 'play'])
-	 * @type {*}
+	 * @property {*} config Configuration object
 	 */
-	function PlayNode(config) {
+	function PlayaNode(config) {
 		RED.nodes.createNode(this, config);
 		var node = this;
 
 		this.on('input', function(msg) {
-			player.play(msg.payload || this.name);
+			var audio = player.play(
+				msg.payload || this.name,
+				function(err) {
+					if (err) {
+						return node.error(err);
+					}
+				});
+			audio.kill();
 			node.send(msg);
 		});
 	}
 
-	RED.nodes.registerType('play', PlayNode);
-}
+	RED.nodes.registerType('playa', PlayaNode);
+};

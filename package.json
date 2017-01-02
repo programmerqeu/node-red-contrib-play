@@ -8,22 +8,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vergissberlin/node-red-contrib-play.git"
+    "url": "https://github.com/programmerqeu/node-red-contrib-play.git"
   },
   "keywords": [
-    "node-red",
+    "console",
+    "mp3",
     "node",
+    "node-red",
+    "play",
     "sound",
-    "console"
+    "wav"
   ],
+  "node-red": {
+    "nodes": {
+      "playa": "play.js"
+    }
+  },
   "author": "André Lademann <andre@programmerq.eu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vergissberlin/node-red-contrib-play/issues"
+    "url": "https://github.com/programmerqeu/node-red-contrib-play/issues"
   },
-  "homepage": "https://github.com/vergissberlin/node-red-contrib-play",
-  "devDependencies": {
-    "exec": "^0.2.1",
+  "homepage": "https://github.com/programmerqeu/node-red-contrib-play",
+  "dependencies": {
     "play-sound": "^1.1.1"
   }
 }
